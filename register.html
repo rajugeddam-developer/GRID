@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - G.R.I.D. Club</title>
+    <link href="./src/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-pattern min-h-screen flex flex-col justify-center items-center py-10 px-4">
+
+    <!-- Navigation Background Blur Component (standalone for this page) -->
+    <a href="index.html" class="absolute top-8 left-8 flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <div
+            class="w-10 h-10 rounded-lg bg-gradient-to-br from-grid-blue to-grid-emerald flex items-center justify-center font-bold text-xl shadow-lg shadow-grid-blue/20">
+            G</div>
+        <span class="font-bold text-2xl tracking-tighter text-white">G.R.I.D.</span>
+    </a>
+
+    <!-- Register Card -->
+    <div class="whiteboard-card w-full max-w-md p-8 relative shadow-2xl shadow-grid-blue/10 mt-12">
+        <div class="marker-accent"></div>
+        <h2 class="text-3xl font-bold mb-2 text-white">Join the Club</h2>
+        <p class="text-gray-400 mb-8 text-sm">Create an account to register for events and track your logical mindset
+            journey.</p>
+
+        <form id="register-form" class="space-y-5">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                <input type="text" id="name" required
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-grid-blue focus:border-transparent transition-all">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                <input type="email" id="email" required
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-grid-blue focus:border-transparent transition-all">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                <input type="password" id="password" required
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-grid-blue focus:border-transparent transition-all">
+            </div>
+
+            <div id="auth-message" class="hidden text-sm py-2 px-3 rounded-lg mt-2"></div>
+
+            <button type="submit" class="btn-primary w-full flex justify-center items-center gap-2 mt-2">
+                <span>Create Account</span>
+            </button>
+        </form>
+
+        <p class="mt-6 text-center text-sm text-gray-400">
+            Already registered?
+            <a href="login.html" class="text-grid-blue hover:text-blue-400 font-medium transition-colors">Log in
+                here</a>
+        </p>
+    </div>
+
+    <!-- Background decorative gradients -->
+    <div class="fixed top-1/4 left-1/4 w-96 h-96 bg-grid-blue/20 rounded-full blur-[100px] -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-96 h-96 bg-grid-emerald/20 rounded-full blur-[100px] -z-10"></div>
+
+    <script type="module" src="./src/js/auth.js"></script>
+</body>
+
+</html>

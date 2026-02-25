@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - G.R.I.D. Club</title>
+    <link href="./src/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-pattern min-h-screen flex flex-col pt-20">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full bg-grid-bg/90 backdrop-blur-md border-b border-gray-800 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-lg bg-gradient-to-br from-grid-blue to-grid-emerald flex items-center justify-center font-bold text-xl shadow-lg shadow-grid-blue/20">
+                        G</div>
+                    <span class="font-bold text-2xl tracking-tighter">G.R.I.D.</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-grid-emerald font-medium transition-colors">Mission</a>
+                </div>
+
+                <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 z-40 bg-grid-bg/95 backdrop-blur-xl hidden flex-col justify-center items-center space-y-8 transition-opacity duration-300"
+        id="mobile-menu">
+        <button class="absolute top-6 right-6 text-gray-400 hover:text-white" id="close-menu-btn">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="index.html" class="text-3xl font-medium text-gray-300 hover:text-white transition-colors">Home</a>
+        <a href="about.html" class="text-3xl font-semibold text-grid-emerald">Mission</a>
+    </div>
+
+    <main class="flex-grow py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full relative overflow-hidden">
+        <!-- Background gradients -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-grid-blue/20 rounded-full blur-[100px] -z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-grid-emerald/20 rounded-full blur-[100px] -z-10"></div>
+        <!-- Vision Section -->
+        <div class="mb-20 text-center relative">
+            <div class="absolute inset-0 bg-grid-blue/10 blur-[80px] -z-10 rounded-full"></div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight reveal delay-100">Our Vision
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed reveal delay-200 font-light italic">
+                "Not Just Coding - Building Logical Minds Through Real Challenges."
+            </p>
+        </div>
+
+        <!-- Mission Sections -->
+        <div class="space-y-12">
+            <!-- Mission 1 -->
+            <div class="whiteboard-card p-10 flex flex-col md:flex-row gap-8 items-start">
+                <div class="marker-accent"></div>
+                <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shrink-0">
+                    <svg class="w-8 h-8 text-grid-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4">Empower Through Logic</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg">
+                        We aim to move students beyond syntax and standard coding exercises. Our primary directive is to
+                        instill deep analytical thinking and logical problem-solving capabilities required by top-tier
+                        tech companies.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission 2 -->
+            <div class="whiteboard-card p-10 flex flex-col md:flex-row gap-8 items-start">
+                <div class="emerald-marker-accent"></div>
+                <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shrink-0">
+                    <svg class="w-8 h-8 text-grid-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4">Interview Readiness</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg">
+                        Bridging the gap between academic curriculum and industry expectations. We curate environments
+                        that simulate real technical and behavioral interviews, making students group-ready and
+                        interview-driven.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission 3 -->
+            <div class="whiteboard-card p-10 flex flex-col md:flex-row gap-8 items-start">
+                <div class="marker-accent"></div>
+                <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700 shrink-0">
+                    <svg class="w-8 h-8 text-grid-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4">CS Fundamentals Dominance</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg">
+                        Solidifying core knowledge in Data Structures, Algorithms, Operating Systems, DBMS, and Computer
+                        Networks. We believe a strong foundation is the key to enduring success in software engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-grid-bg py-12 mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-br from-grid-blue to-grid-emerald flex items-center justify-center font-bold text-sm">
+                    G</div>
+                <span class="font-bold">G.R.I.D.</span>
+            </div>
+            <p class="text-gray-500 text-sm">Raghu Engineering College &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

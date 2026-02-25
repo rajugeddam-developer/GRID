@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - G.R.I.D. Club</title>
+    <link href="./src/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-pattern min-h-screen flex flex-col pt-20">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full bg-grid-bg/90 backdrop-blur-md border-b border-gray-800 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-lg bg-gradient-to-br from-grid-blue to-grid-emerald flex items-center justify-center font-bold text-xl shadow-lg shadow-grid-blue/20">
+                        G</div>
+                    <span class="font-bold text-2xl tracking-tighter">G.R.I.D.</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition-colors">Mission</a>
+                    <a href="events.html" class="text-grid-emerald font-medium transition-colors">Events</a>
+                    <a href="team.html" class="text-gray-300 hover:text-white transition-colors">Team</a>
+                </div>
+
+                <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold tracking-tight mb-4">Upcoming Events</h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Engage in analytical thinking and real-world
+                problem-solving through our curated activities.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Event Card 1 -->
+            <div class="whiteboard-card flex flex-col group">
+                <div class="marker-accent"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-grid-blue transition-colors">Tech Mind
+                        Challenge</h3>
+                    <span
+                        class="bg-blue-500/10 text-grid-blue text-xs font-bold px-2 py-1 rounded border border-blue-500/20">Aptitude</span>
+                </div>
+                <p class="text-gray-400 mb-6 flex-grow">Evaluate cognitive and technical readiness focusing on core
+                    programming concepts and problem-solving skills.</p>
+                <button class="btn-primary w-full text-center register-btn" data-event-id="1">Register Now</button>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="whiteboard-card flex flex-col group">
+                <div class="emerald-marker-accent"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-grid-emerald transition-colors">Puzzle
+                        Parade</h3>
+                    <span
+                        class="bg-emerald-500/10 text-grid-emerald text-xs font-bold px-2 py-1 rounded border border-emerald-500/20">Logic</span>
+                </div>
+                <p class="text-gray-400 mb-6 flex-grow">Enhance lateral thinking capabilities and analytical logic
+                    through complex puzzles and brain teasers.</p>
+                <button class="btn-primary w-full text-center register-btn" data-event-id="2">Register Now</button>
+            </div>
+
+            <!-- Event Card 3 -->
+            <div class="whiteboard-card flex flex-col group">
+                <div class="marker-accent"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-grid-blue transition-colors">Core Combat
+                    </h3>
+                    <span
+                        class="bg-blue-500/10 text-grid-blue text-xs font-bold px-2 py-1 rounded border border-blue-500/20">Fundamentals</span>
+                </div>
+                <p class="text-gray-400 mb-6 flex-grow">Strengthen understanding of operating systems, database
+                    management systems, and computer networks.</p>
+                <button class="btn-primary w-full text-center register-btn" data-event-id="3">Register Now</button>
+            </div>
+
+            <!-- Event Card 4 -->
+            <div class="whiteboard-card flex flex-col group">
+                <div class="emerald-marker-accent"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-grid-emerald transition-colors">Logic
+                        League</h3>
+                    <span
+                        class="bg-emerald-500/10 text-grid-emerald text-xs font-bold px-2 py-1 rounded border border-emerald-500/20">Algorithms</span>
+                </div>
+                <p class="text-gray-400 mb-6 flex-grow">Refine problem-solving skills through algorithmic challenges and
+                    competitive coding scenarios.</p>
+                <button class="btn-primary w-full text-center register-btn" data-event-id="4">Register Now</button>
+            </div>
+
+            <!-- Event Card 5 -->
+            <div class="whiteboard-card flex flex-col group">
+                <div class="marker-accent"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-grid-blue transition-colors">Code &
+                        Concept</h3>
+                    <span
+                        class="bg-blue-500/10 text-grid-blue text-xs font-bold px-2 py-1 rounded border border-blue-500/20">Whiteboarding</span>
+                </div>
+                <p class="text-gray-400 mb-6 flex-grow">Practice whiteboard coding and articulate solutions effectively
+                    during technical interviews.</p>
+                <button class="btn-primary w-full text-center register-btn" data-event-id="5">Register Now</button>
+            </div>
+
+            <!-- Event Card 6 -->
+            <div class="whiteboard-card flex flex-col group">
+                <div class="emerald-marker-accent"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-grid-emerald transition-colors">Mock Maze
+                    </h3>
+                    <span
+                        class="bg-emerald-500/10 text-grid-emerald text-xs font-bold px-2 py-1 rounded border border-emerald-500/20">Interview</span>
+                </div>
+                <p class="text-gray-400 mb-6 flex-grow">Experience comprehensive mock interviews covering technical and
+                    HR rounds, including group discussions.</p>
+                <button class="btn-primary w-full text-center register-btn" data-event-id="6">Register Now</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Registration Modal -->
+    <div id="registration-modal"
+        class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div
+            class="bg-grid-card border border-gray-700 rounded-2xl w-full max-w-md p-8 relative shadow-2xl shadow-grid-blue/10">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <h2 class="text-2xl font-bold mb-2">Register for Event</h2>
+            <p class="text-gray-400 mb-6 text-sm" id="modal-event-name">Fill out your details to participate.</p>
+
+            <form id="registration-form" class="space-y-4">
+                <input type="hidden" id="event-id-input" name="eventId" value="">
+
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-grid-blue focus:border-transparent transition-all">
+                </div>
+
+                <div>
+                    <label for="rollNumber" class="block text-sm font-medium text-gray-300 mb-1">Roll Number</label>
+                    <input type="text" id="rollNumber" name="rollNumber" required
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-grid-blue focus:border-transparent transition-all">
+                </div>
+
+                <div>
+                    <label for="branch" class="block text-sm font-medium text-gray-300 mb-1">Branch</label>
+                    <select id="branch" name="branch" required
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-grid-blue focus:border-transparent transition-all">
+                        <option value="" disabled selected>Select Branch</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="CSM">CSM</option>
+                        <option value="CSD">CSD</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-grid-blue focus:border-transparent transition-all">
+                </div>
+
+                <div id="form-message" class="hidden text-sm py-2 px-3 rounded-lg mt-2"></div>
+
+                <button type="submit" class="btn-primary w-full mt-6 flex justify-center items-center gap-2">
+                    <span>Submit Registration</span>
+                    <svg class="w-4 h-4 hidden" id="loading-spinner" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                        </circle>
+                        <path class="opacity-75" fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                        </path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./src/js/events.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

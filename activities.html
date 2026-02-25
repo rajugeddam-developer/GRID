@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Activities - G.R.I.D. Club</title>
+    <link href="./src/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-pattern min-h-screen flex flex-col pt-20">
+
+    <!-- Authenticated Navigation -->
+    <nav
+        class="fixed top-0 w-full bg-grid-bg/90 backdrop-blur-md border-b border-gray-800 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <a href="dashboard.html" class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-grid-blue to-grid-emerald flex items-center justify-center font-bold text-xl shadow-lg shadow-grid-blue/20">
+                            G</div>
+                        <span class="font-bold text-2xl tracking-tighter">G.R.I.D.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="materials.html" class="text-gray-300 hover:text-white transition-colors">Materials</a>
+                    <a href="activities.html" class="text-grid-emerald font-medium transition-colors">Events</a>
+                    <a href="dashboard.html" class="text-gray-300 hover:text-white transition-colors">Announcements</a>
+                    <a href="team_directory.html" class="text-gray-300 hover:text-white transition-colors">Team</a>
+                    <button id="logout-btn" class="btn-secondary ml-4 !px-4 !py-1.5 !text-sm">Logout</button>
+                    <!-- User Profile Avatar Link -->
+                    <a href="profile.html" class="group" title="User Profile">
+                        <div class="w-10 h-10 rounded-full bg-grid-blue border-2 border-grid-blue flex items-center justify-center font-bold text-sm text-white shadow-[0_0_15px_rgba(0,255,198,0.3)] transition-all group-hover:scale-110"
+                            id="user-avatar">
+                            ?</div>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 z-40 bg-grid-bg/95 backdrop-blur-xl hidden flex-col justify-center items-center space-y-8 transition-opacity duration-300"
+        id="mobile-menu">
+        <button class="absolute top-6 right-6 text-gray-400 hover:text-white" id="close-menu-btn">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="text-xl font-bold text-grid-blue mb-4 border-b border-gray-700 pb-2 flex flex-col items-center gap-2"
+            id="mobile-user-name">
+            <div class="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white text-2xl font-bold"
+                id="mobile-user-avatar">?</div>
+            Welcome
+        </div>
+        <a href="profile.html" class="text-3xl font-medium text-grid-emerald hover:text-white transition-colors">My
+            Profile</a>
+        <a href="materials.html"
+            class="text-3xl font-medium text-gray-300 hover:text-white transition-colors">Materials</a>
+        <a href="activities.html"
+            class="text-3xl font-medium text-grid-emerald hover:text-white transition-colors">Events</a>
+        <a href="dashboard.html"
+            class="text-3xl font-medium text-gray-300 hover:text-white transition-colors">Announcements</a>
+        <a href="team_directory.html"
+            class="text-3xl font-medium text-gray-300 hover:text-white transition-colors">Team</a>
+        <button id="mobile-logout-btn"
+            class="text-3xl font-medium text-red-500 hover:text-red-400 transition-colors mt-8">Logout</button>
+    </div>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full space-y-24 relative overflow-hidden">
+        <!-- Background gradients -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-grid-blue/20 rounded-full blur-[100px] -z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-grid-emerald/20 rounded-full blur-[100px] -z-10"></div>
+
+        <!-- Section: Events -->
+        <section id="events">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-8 h-8 rounded-lg bg-grid-blue/20 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-grid-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold">Club Activities</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity Card 1 -->
+                <div class="whiteboard-card flex flex-col group">
+                    <div class="marker-accent"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-grid-blue transition-colors">Tech Mind
+                            Challenge</h3>
+                        <span
+                            class="bg-blue-500/10 text-grid-blue text-xs font-bold px-2 py-1 rounded border border-blue-500/20">Aptitude</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 flex-grow">Evaluate cognitive and technical readiness focusing on core
+                        programming concepts and problem-solving scenarios.</p>
+                    <div class="relative group/btn w-full mt-auto">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur opacity-30 group-hover/btn:opacity-70 transition duration-500 animate-pulse">
+                        </div>
+                        <button
+                            class="relative btn-primary w-full register-btn !bg-blue-600 border border-blue-400/30 shadow-xl"
+                            data-event-id="1">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 2 -->
+                <div class="whiteboard-card flex flex-col group">
+                    <div class="emerald-marker-accent"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-grid-emerald transition-colors">Puzzle
+                            Parade</h3>
+                        <span
+                            class="bg-emerald-500/10 text-grid-emerald text-xs font-bold px-2 py-1 rounded border border-emerald-500/20">Logic</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 flex-grow">Enhance lateral thinking capabilities and analytical logic
+                        through a series of complex puzzles and brain teasers.</p>
+                    <div class="relative group/btn w-full mt-auto">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-green-400 rounded-lg blur opacity-30 group-hover/btn:opacity-70 transition duration-500 animate-pulse">
+                        </div>
+                        <button
+                            class="relative btn-primary w-full register-btn !bg-emerald-600 border border-emerald-400/30 shadow-xl"
+                            data-event-id="2">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 3 -->
+                <div class="whiteboard-card flex flex-col group">
+                    <div class="marker-accent"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-grid-blue transition-colors">Core
+                            Combat</h3>
+                        <span
+                            class="bg-blue-500/10 text-grid-blue text-xs font-bold px-2 py-1 rounded border border-blue-500/20">Fundamentals</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 flex-grow">A rigorous challenge to strengthen understanding of
+                        operating systems, database management, and networks.</p>
+                    <div class="relative group/btn w-full mt-auto">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur opacity-30 group-hover/btn:opacity-70 transition duration-500 animate-pulse">
+                        </div>
+                        <button
+                            class="relative btn-primary w-full register-btn !bg-blue-600 border border-blue-400/30 shadow-xl"
+                            data-event-id="3">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 4 -->
+                <div class="whiteboard-card flex flex-col group reveal delay-600">
+                    <div class="emerald-marker-accent"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-grid-emerald transition-colors">Logic
+                            League</h3>
+                        <span
+                            class="bg-emerald-500/10 text-grid-emerald text-xs font-bold px-2 py-1 rounded border border-emerald-500/20">Algorithms</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 flex-grow">Refine problem-solving skills through algorithmic challenges
+                        and competitive coding scenarios.</p>
+                    <div class="relative group/btn w-full mt-auto">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-green-400 rounded-lg blur opacity-30 group-hover/btn:opacity-70 transition duration-500 animate-pulse">
+                        </div>
+                        <button
+                            class="relative btn-primary w-full register-btn !bg-emerald-600 border border-emerald-400/30 shadow-xl"
+                            data-event-id="4">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 5 -->
+                <div class="whiteboard-card flex flex-col group reveal delay-700">
+                    <div class="marker-accent"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-grid-blue transition-colors">Code &
+                            Concept</h3>
+                        <span
+                            class="bg-blue-500/10 text-grid-blue text-xs font-bold px-2 py-1 rounded border border-blue-500/20">Whiteboarding</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 flex-grow">Practice whiteboard coding and articulate solutions
+                        effectively during technical interviews.</p>
+                    <div class="relative group/btn w-full mt-auto">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur opacity-30 group-hover/btn:opacity-70 transition duration-500 animate-pulse">
+                        </div>
+                        <button
+                            class="relative btn-primary w-full register-btn !bg-blue-600 border border-blue-400/30 shadow-xl"
+                            data-event-id="5">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- Activity Card 6 -->
+                <div class="whiteboard-card flex flex-col group reveal delay-800">
+                    <div class="emerald-marker-accent"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-grid-emerald transition-colors">Mock
+                            Maze</h3>
+                        <span
+                            class="bg-emerald-500/10 text-grid-emerald text-xs font-bold px-2 py-1 rounded border border-emerald-500/20">Interview</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 flex-grow">Experience comprehensive mock interviews covering technical
+                        and HR rounds, including group discussions.</p>
+                    <div class="relative group/btn w-full mt-auto">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-green-400 rounded-lg blur opacity-30 group-hover/btn:opacity-70 transition duration-500 animate-pulse">
+                        </div>
+                        <button
+                            class="relative btn-primary w-full register-btn !bg-emerald-600 border border-emerald-400/30 shadow-xl"
+                            data-event-id="6">Register Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Registration Modal -->
+        <div id="registration-modal"
+            class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity duration-300">
+            <div
+                class="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-md p-8 relative shadow-2xl shadow-grid-blue/20 transform scale-95 transition-transform duration-300">
+                <button id="close-modal-btn"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-grid-blue/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-grid-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold">Register for Event</h2>
+                </div>
+                <form id="event-registration-form" class="space-y-4">
+                    <input type="hidden" id="event-id-input">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Your Full Name</label>
+                        <input type="text" id="student-name" required
+                            class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-grid-blue transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Roll Number</label>
+                        <input type="text" id="roll-number" required
+                            class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-grid-blue transition-colors"
+                            placeholder="e.g. 21981A0501">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Branch</label>
+                        <select id="student-branch" required
+                            class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-grid-blue transition-colors">
+                            <option value="">Select Branch</option>
+                            <option value="CSE">Computer Science & Engineering</option>
+                            <option value="ECE">Electronics & Communication</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary w-full mt-6 flex items-center justify-center gap-2">
+                        <span>Confirm Registration</span>
+                    </button>
+                    <!-- Loading State -->
+                    <div id="loading-spinner" class="hidden justify-center mt-4">
+                        <svg class="animate-spin h-6 w-6 text-grid-blue" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                    </div>
+                    <!-- Success Message -->
+                    <div id="success-message"
+                        class="hidden text-center text-grid-emerald mt-4 font-medium p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
+                        Registration Successful! Check your email.
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-grid-bg py-12 mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2 reveal delay-100">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-br from-grid-blue to-grid-emerald flex items-center justify-center font-bold text-sm">
+                    G</div>
+                <span class="font-bold">G.R.I.D. Platform</span>
+            </div>
+            <p class="text-gray-500 text-sm reveal delay-200">Raghu Engineering College &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./src/js/auth.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/events.js"></script>
+</body>
+
+</html>
