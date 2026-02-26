@@ -87,6 +87,15 @@
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    .splash-video {
+        width: 100%;
+        height: auto;
+        max-height: 100vh;
+        object-fit: contain;
+    }
+}
+
 .splash-screen.fade-out {
     opacity: 0;
     visibility: hidden;
