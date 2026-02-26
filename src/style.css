@@ -67,3 +67,49 @@
 .delay-400 {
     transition-delay: 400ms;
 }
+
+/* Splash Screen Overlay */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #0b1120;
+    /* grid-bg color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.splash-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Splash Skip Button */
+.skip-btn {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.skip-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}

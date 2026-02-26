@@ -12,6 +12,15 @@
 
 <body class="bg-pattern min-h-screen flex flex-col pt-20">
 
+    <!-- Splash Screen Overlay -->
+    <div id="splash-screen" class="splash-screen">
+        <video id="splash-video" class="splash-video" autoplay muted playsinline>
+            <source src="./assets/splash.mp4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="skip-splash-btn" class="skip-btn">Skip Intro</button>
+    </div>
+
     <!-- Navigation -->
     <nav
         class="fixed top-0 w-full bg-grid-bg/90 backdrop-blur-md border-b border-gray-800 z-50 transition-all duration-300">
@@ -224,6 +233,53 @@
     </footer>
 
     <script type="module" src="./src/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const splashScreen = document.getElementById('splash-screen');
+            const splashVideo = document.getElementById('splash-video');
+            const skipBtn = document.getElementById('skip-splash-btn');
+
+            // Check if the user has already seen the splash screen in this session
+            if (sessionStorage.getItem('splashSeen') === 'true') {
+                splashScreen.style.display = 'none';
+                return; // Skip the rest of the logic
+            }
+
+            // Prevent scrolling on the main page while splash is visible
+            document.body.style.overflow = 'hidden';
+
+            // Function to dismiss the splash screen
+            const dismissSplash = () => {
+                splashScreen.classList.add('fade-out');
+                document.body.style.overflow = ''; // Restore scrolling
+                sessionStorage.setItem('splashSeen', 'true');
+
+                // Remove from DOM after animation completes (800ms matches CSS transition)
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                }, 800);
+            };
+
+            // Event listener for video end
+            splashVideo.addEventListener('ended', dismissSplash);
+
+            // Event listener for skip button
+            skipBtn.addEventListener('click', dismissSplash);
+
+            // Fallback in case video fails to load or play
+            splashVideo.addEventListener('error', dismissSplash);
+
+            // Start playing the video explicitly (sometimes autoplay needs a push)
+            const playPromise = splashVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    // Auto-play was prevented by the browser, dismiss the splash
+                    console.log("Autoplay prevented:", error);
+                    dismissSplash();
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
