@@ -32,13 +32,6 @@
                     <a href="dashboard.html#announcements"
                         class="text-gray-300 hover:text-white transition-colors">Announcements</a>
                     <a href="team_directory.html" class="text-gray-300 hover:text-white transition-colors">Team</a>
-                    <button id="logout-btn" class="btn-secondary ml-4 !px-4 !py-1.5 !text-sm">Logout</button>
-                    <!-- User Profile Avatar Link -->
-                    <a href="profile.html" class="group" title="User Profile">
-                        <div class="w-10 h-10 rounded-full bg-grid-blue border-2 border-grid-blue flex items-center justify-center font-bold text-sm text-white shadow-[0_0_15px_rgba(0,255,198,0.3)] transition-all group-hover:scale-110"
-                            id="user-avatar">
-                            ?</div>
-                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -60,14 +53,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
-        <div class="text-xl font-bold text-grid-blue mb-4 border-b border-gray-700 pb-2 flex flex-col items-center gap-2"
-            id="mobile-user-name">
-            <div class="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white text-2xl font-bold"
-                id="mobile-user-avatar">?</div>
-            Welcome
-        </div>
-        <a href="profile.html" class="text-3xl font-medium text-grid-emerald hover:text-white transition-colors">My
-            Profile</a>
         <a href="materials.html"
             class="text-3xl font-medium text-grid-emerald hover:text-white transition-colors">Home</a>
         <a href="activities.html"
@@ -76,8 +61,6 @@
             class="text-3xl font-medium text-gray-300 hover:text-white transition-colors">Announcements</a>
         <a href="team_directory.html"
             class="text-3xl font-medium text-gray-300 hover:text-white transition-colors">Team</a>
-        <button id="mobile-logout-btn"
-            class="text-3xl font-medium text-red-500 hover:text-red-400 transition-colors mt-8">Logout</button>
     </div>
 
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full space-y-24 relative overflow-hidden">
@@ -452,7 +435,6 @@
         </div>
     </footer>
 
-    <script type="module" src="./src/js/auth.js"></script>
     <script type="module" src="./src/js/main.js"></script>
 </body>
 
